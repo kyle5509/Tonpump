@@ -62,8 +62,8 @@ export default function Register() {
             }
             setRedirecting(true)
             router.push('/')
-        } catch (error) {
-            setBackendError(error.message)
+        } catch (error: any) {
+            setBackendError(error?.message)
         }
         finally {
             setLoading(false)
