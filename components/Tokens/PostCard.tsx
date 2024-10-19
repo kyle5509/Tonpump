@@ -31,7 +31,7 @@ export default function PostCard({ onChange, value, updateComment, setUpdateComm
             <div className="flex  gap-2 items-center">
                 <div className="h-12 w-12 rounded-full border-2"></div>
                 <div className="">
-                    <p className='font-semibold text-sm'>@Harry76</p>
+                    <p className='font-semibold text-sm'>@Harry764</p>
                 </div>
                 <button onClick={() => setPost(true)} className={`ml-auto px-5 py-2.5 border-prim border-2 rounded-md text-xs font-semibold ${post ? "opacity-0 invisible" : "opacity-100 visible"} duration-500`}>Comment</button>
             </div>
