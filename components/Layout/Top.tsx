@@ -84,7 +84,6 @@ export default function Top() {
                     </div>
                     <img src="gem.png" className="xl:hidden -translate-x-1" alt="" />
                     <div className="flex items-center gap-2">
-
                         <TonConnectButton style={{ paddingBlock: "10px" }} />
                     </div>
                 </div>
