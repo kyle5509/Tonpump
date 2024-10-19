@@ -84,14 +84,8 @@ export default function Top() {
                     </div>
                     <img src="gem.png" className="xl:hidden -translate-x-1" alt="" />
                     <div className="flex items-center gap-2">
-                        {friendlyAddress
-                            ?
-                            <div className={`flex shrink-0 gap-2 items-center px-4 py-3 xl:px-5 xl:py-3 border-2 font-semibold duration-500 rounded-lg xl:rounded-xl cursor-pointer active:scale-100 hover:scale-105 shadow-md ${darkmode ? "border-prim text-prim" : "text-secondary border-secondary"}`}>
-                                <FaRegGem className="text-base xl:text-lg" />
-                                <p className="text-xs xl:text-sm">Create Token</p>
-                            </div>
-                            :
-                            <TonConnectButton style={{ paddingBlock: "10px" }} />}
+
+                        <TonConnectButton style={{ paddingBlock: "10px" }} />
                     </div>
                 </div>
             </div>
