@@ -43,7 +43,7 @@ export default function MobileSidebar({ navOpened, setNavOpened }: Props) {
       <div className="">
         <div className="flex h-11 gap-2 mb-3">
           <div className="h-full flex-1 border-prim border-2 rounded-md">
-            <input type="text" className="h-full text-13 bg-transparent text-white w-full outline-none pl-4 placeholder:text-white mb-3" placeholder='Try Searching "Trending"' />
+            <input type="text" value="" className="h-full text-13 bg-transparent text-white w-full outline-none pl-4 placeholder:text-white mb-3" placeholder='Try Searching "Trending"' />
           </div>
           <button onClick={() => setNavOpened(false)} className="bg-secondary text-13 rounded-md text-white font-semibold px-4 h-full ">Search </button>
         </div>

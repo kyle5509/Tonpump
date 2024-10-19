@@ -79,7 +79,7 @@ export default function Top() {
                         <p className={`font-semibold duration-500 ${darkmode ? "text-white" : 'text-secondary'} `}>0.0200</p>
                     </div>
                     <div className={`max-w-96 xl:hidden ${darkmode ? "border-prim" : "border-secondary"} border-2 flex-1 h-[40px] shadow duration-500 rounded-full relative `}>
-                        <input type="text" placeholder='Try searching "Trending"' className={`h-full text-white placeholder:font-normal  w-full bg-transparent text-xs outline-none pr-10 pl-5 `} />
+                        <input value="" type="text" placeholder='Try searching "Trending"' className={`h-full text-white placeholder:font-normal  w-full bg-transparent text-xs outline-none pr-10 pl-5 `} />
                         <BiSearch className={`${darkmode ? "text-prim" : "text-secondary"} duration-500 absolute top-1/2 -translate-y-1/2 right-3 text-base xl:text-xl`} />
                     </div>
                     <img src="gem.png" className="xl:hidden -translate-x-1" alt="" />
