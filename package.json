@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://backend-server-tvb6.onrender.com",
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,6 +13,7 @@
     "@aws-crypto/sha256-js": "^5.2.0",
     "@orbs-network/ton-access": "^2.3.3",
     "@reduxjs/toolkit": "^2.2.7",
+    "@ton/core": "^0.59.0",
     "@tonconnect/ui-react": "^2.0.9",
     "axios": "^1.7.7",
     "framer-motion": "^11.9.0",
@@ -36,5 +36,4 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
-
 }
