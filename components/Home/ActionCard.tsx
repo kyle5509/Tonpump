@@ -9,6 +9,7 @@ type Props = {
 }
 export default function ActionCard({ title, amount, user }: Props) {
     const darkmode = useAppSelector(store => store.darkmode.value)
+    
     return (
         <div className="font-semibold">
             {title === "create" && <div className={`h-14 w-full duration-500   transition-colors ${!darkmode ? "bg-[#EDEFF2]": "bg-[#D8FDFD0F]"} text-white grid grid-cols-[1fr_50px] items-center gap-3 p-3 rounded-xl relative`}>

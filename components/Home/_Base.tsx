@@ -2,18 +2,15 @@
 import { motion } from "framer-motion";
 import { variant } from "@/lib/framer";
 import Main from "./Main";
-import HoldersTable from "../Tables/HoldersTable";
-import FollowersTable from "../Tables/FollowersTable";
-import TokenCreatedTable from "../Tables/TokenCreatedTable";
-import TokenHeldTable from "../Tables/TokenHeldTable";
-import TransactionTable from "../Tables/TransactionTable";
-import FollowingTable from "../Tables/FollowingTable";
 import { useAppDispatch } from "@/redux/store/hook";
 import { useEffect } from "react";
 import { stopRedirect } from "@/redux/reducers/redirect";
+import { useJettonContract } from "@/hooks/useJettonContract2";
 
 export default function Base() {
   const dispatch = useAppDispatch()
+  const { jettonWalletAddress, balance, mint } = useJettonContract();
+
 
   useEffect(() => {
     dispatch(stopRedirect())
@@ -25,8 +22,11 @@ export default function Base() {
       variants={variant}
       animate="animate"
       initial="initial"
-      className=" h-full overflow-y-auto "
+      className=" h-full text-white overflow-y-auto "
     >
+          {jettonWalletAddress && <p>Wallet Address: {jettonWalletAddress}</p>}
+          {balance !== null && <p>Balance: {balance} Nano</p>}
+          <button onClick={mint} disabled={!jettonWalletAddress}>Mint JETTN</button>
       <Main />
     </motion.div>
   );
