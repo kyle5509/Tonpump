@@ -28,9 +28,9 @@ export default function Base() {
       initial="initial"
       className=" h-full text-white overflow-y-auto "
     >
-      <div>
+      <div className="w-full place-content-center grid">
         <h1>Deploy Jetton Contract</h1>
-        <button onClick={handleDeploy}>Deploy</button>
+        <button className="bg-prim px-6 py-3 rounded-md shadow-md duration-300 active:scale-95" onClick={handleDeploy}>Deploy</button>
       </div>
       <Main />
     </motion.div>
