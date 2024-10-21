@@ -13,14 +13,8 @@ export default function Base() {
   const { deploy } = useJettonContract();
 
   const handleDeploy = () => {
-    try {
-      deploy();
-      console.log("Deployment successful!");
-    } catch (error) {
-      console.error("Deployment failed:", error);
-    }
-  };
-
+    deploy()
+  }
   return (
     <motion.div
       variants={variant}
@@ -29,7 +23,7 @@ export default function Base() {
       className=" h-full text-white overflow-y-auto "
     >
       <div className="w-full place-content-center grid">
-        <h1>Deploy Jetton Contract</h1>
+        <h1 className="mb-2 text-lg font-bold text-white">Deploy Jetton Contract</h1>
         <button className="bg-prim px-6 py-3 rounded-md shadow-md duration-300 active:scale-95" onClick={handleDeploy}>Deploy</button>
       </div>
       <Main />
