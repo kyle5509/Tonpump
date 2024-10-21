@@ -27,9 +27,9 @@ export function useJettonContract() {
     let content = buildOnchainMetadata(jettonParams);
     const jettonContractFactory = useAsyncInitialize(async () => {
         if (!client) return;
-        const contract = TonkPumpFactory.fromAddress(Address.parse("EQB8StgTQXidy32a8xfu7j4HMoWYV0b0cFM8nXsP2cza_b7Y"))
-        return client.open(contract) as OpenedContract<TonkPumpFactory>
-    }, [client])
+        const contract: any = TonkPumpFactory.fromAddress(Address.parse("EQB8StgTQXidy32a8xfu7j4HMoWYV0b0cFM8nXsP2cza_b7Y"));
+        return client.open(contract) as OpenedContract<any>;
+    }, [client]);
     return {
         deploy: () => {
             const message: DeployContractAndAMM = {
@@ -44,5 +44,3 @@ export function useJettonContract() {
         }
     }
 }
-
-// 52449938
