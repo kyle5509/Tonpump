@@ -1,5 +1,5 @@
 {
-    "url": "http://localhost:3000",
+    "url": "https://tonpump-five.vercel.app",
     "name": "Tonpump",
-    "iconUrl": "http://localhost:3000/logo.svg"
+    "iconUrl": "https://tonpump-five.vercel.app/logo.svg"
 }
