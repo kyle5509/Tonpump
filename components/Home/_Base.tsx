@@ -13,8 +13,14 @@ export default function Base() {
   const { deploy } = useJettonContract();
 
   const handleDeploy = () => {
-    deploy()
-  }
+    try {
+      deploy();
+      console.log("Deployment successful!");
+    } catch (error) {
+      console.error("Deployment failed:", error);
+    }
+  };
+
   return (
     <motion.div
       variants={variant}
