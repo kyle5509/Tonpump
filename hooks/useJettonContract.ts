@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Address, fromNano, OpenedContract, toNano } from "ton-core";
+import { Address, fromNano, OpenedContract, toNano } from "@ton/core";
 import {
     DeployContractAndAMM,
     loadContractDeployed,
@@ -28,7 +28,7 @@ export function useJettonContract() {
     const jettonContractFactory = useAsyncInitialize(async () => {
         if (!client) return;
         const contract = TonkPumpFactory.fromAddress(Address.parse(process.env.NEXT_PUBLIC_TOKEN_FACTORY_ADDRESS as string))
-        return client.open(contract) as OpenedContract<TonkPumpFactory>
+        return client.open(contract as any) as OpenedContract<TonkPumpFactory>
     }, [client])
     return {
         deploy: () => {
@@ -44,5 +44,3 @@ export function useJettonContract() {
         }
     }
 }
-
-// 52449938
