@@ -27,7 +27,7 @@ export function useJettonContract() {
     let content = buildOnchainMetadata(jettonParams);
     const jettonContractFactory = useAsyncInitialize(async () => {
         if (!client) return;
-        const contract = TonkPumpFactory.fromAddress(Address.parse(process.env.NEXT_PUBLIC_TOKEN_FACTORY_ADDRESS as string))
+        const contract = TonkPumpFactory.fromAddress(Address.parse('EQB1R7CzNjVvOxpnG1-yo6IZy7JeYxb3ABs8T_qAzKiIDuh3'))
         return client.open(contract as any) as OpenedContract<TonkPumpFactory>
     }, [client])
     return {
