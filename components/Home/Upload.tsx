@@ -16,7 +16,7 @@ export default function Upload() {
                         <BsStar />
                         <BsStar />
                     </div>
-                    <p className="px-5 py-3 rounded-full bg-prim text-gray-800 text-sm font-semibold">Post</p>
+                    <p className="px-7 py-3 rounded-full bg-prim text-gray-800 text-sm font-semibold">Post</p>
                 </div>
             </div>
         </div>

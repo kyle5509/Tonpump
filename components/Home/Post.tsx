@@ -1,7 +1,7 @@
 import { BsChat, BsDot, BsHeart, BsMessenger, BsStar } from "react-icons/bs";
 export default function Post({post}: {post: any}) {
   return (
-    <div className="flex bg-[#272727] shadow-md border-[#8996A9] border-2  p-3 rounded-xl gap-4">
+    <div className="flex bg-[#272727] shadow-md border-[#8996A9] border-2  p-3 rounded-lg gap-4">
       <img src="Medium.png" className="h-[42px] w-[42px]" alt="" />
       <div className="flex text-white flex-col gap-1">
         <div className="flex justify-between items-center">

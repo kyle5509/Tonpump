@@ -42,7 +42,7 @@ export function useJettonContract() {
                 v: bigIntValue
             }
             jettonContractFactory?.send(sender, {
-                value: toNano("0.5")
+                value: toNano("0.6")
             }, message)
         }
     }
