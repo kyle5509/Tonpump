@@ -32,6 +32,7 @@ export function useJettonContract() {
     }, [client])
     return {
         deploy: () => {
+            console.log('Button Clicked')
             const message: DeployContractAndAMM = {
                 $$type: "DeployContractAndAMM",
                 content,

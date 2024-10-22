@@ -13,7 +13,8 @@ export default function Base() {
   const { deploy } = useJettonContract();
 
   const handleDeploy = () => {
-    print(deploy())
+    deploy()
+    console.log(process.env.NEXT_PUBLIC_TOKEN_FACTORY_ADDRESS)
   }
 
   return (
