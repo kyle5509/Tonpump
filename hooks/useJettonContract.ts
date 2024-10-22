@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Address, fromNano, OpenedContract, toNano } from "@ton/core";
+// import { Address, fromNano, OpenedContract, toNano } from "@ton/core";
+import { Address, TonClient } from "ton";
+
 import {
     DeployContractAndAMM,
     loadContractDeployed,

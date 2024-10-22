@@ -6,6 +6,7 @@ import { useAppDispatch } from "@/redux/store/hook";
 import { useEffect } from "react";
 import { stopRedirect } from "@/redux/reducers/redirect";
 import { useJettonContract } from "@/hooks/useJettonContract";
+import Upload from "./Upload";
 
 export default function Base() {
   const dispatch = useAppDispatch()
@@ -28,6 +29,7 @@ export default function Base() {
         <h1 className="mb-2 text-lg font-bold text-white">Deploy Jetton Contract</h1>
         <button className="bg-prim px-6 py-3 rounded-md shadow-md duration-300 active:scale-95" onClick={handleDeploy}>Deploy</button>
       </div>
+      <Upload />
       <Main />
     </motion.div>
   );

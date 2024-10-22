@@ -2,12 +2,12 @@
 import PostCard from './PostCard'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Post from './Post'
 
 export default function DisplayPostCards() {
     const [posts, setPosts] = useState<[]>([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null);
-    const [update, setUpdate] = useState(0)
 
     const fetchData = async () => {
         try {
@@ -18,12 +18,11 @@ export default function DisplayPostCards() {
             setError(err);
         } finally {
             setLoading(false);
-            setUpdate(1)
         }
     };
     useEffect(() => {
         fetchData()
-    }, [update])
+    }, [loading])
 
     return (
         <div className="">
@@ -32,7 +31,7 @@ export default function DisplayPostCards() {
                     {posts?.length > 0 && (
                         <div className={`grid duration-500 gap-8 grid-cols-1 sm:grid-cols-2 4xl:grid-cols-3`}>
                             {posts?.map((post, key) => (
-                                <PostCard post={post}/>
+                                <Post post={post}/>
                             ))}
                         </div>
                     )}
