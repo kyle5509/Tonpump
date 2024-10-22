@@ -12,7 +12,9 @@ export default function Base() {
 
   const { deploy } = useJettonContract();
 
-  const handleDeploy =  () => deploy()
+  const handleDeploy = () => {
+    print(deploy())
+  }
 
   return (
     <motion.div
