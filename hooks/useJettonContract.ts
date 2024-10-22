@@ -31,16 +31,22 @@ export function useJettonContract() {
         return client.open(contract) as OpenedContract<any>;
     }, [client]);
     return {
-        deploy: () => {
+        deploy: async () => {
             const message: DeployContractAndAMM = {
                 $$type: "DeployContractAndAMM",
                 content,
                 ticker: "USDC/TON",
                 v: bigIntValue
             }
-            jettonContractFactory?.send(sender, {
-                value: toNano("0.05")
-            }, message)
+            try {
+                const result = await jettonContractFactory?.send(sender, {
+                    value: toNano("0.05"),
+                }, message);
+                return result; // Return the result for logging
+            } catch (error) {
+                console.error("Deployment failed:", error);
+                throw error;
+            }
         }
     }
 }
