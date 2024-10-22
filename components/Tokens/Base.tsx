@@ -54,7 +54,6 @@ export default function Base() {
   useEffect(() => {
     fetchPostsAndComments()
     dispatch(stopRedirect())
-    console.log(postsRedux)
   }, [active, dispatch]);
 
   return (

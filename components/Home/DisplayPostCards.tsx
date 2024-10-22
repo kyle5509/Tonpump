@@ -23,7 +23,6 @@ export default function DisplayPostCards() {
     };
     useEffect(() => {
         fetchData()
-        console.log(posts)
     }, [update])
 
     return (

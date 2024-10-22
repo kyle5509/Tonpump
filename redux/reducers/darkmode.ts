@@ -12,7 +12,6 @@ export const DarkmodeSlice = createSlice({
     reducers: ({
         toggleDarkmode: (state) => {
             state.value = !state.value
-            console.log(state.value)
             return state
         }
     })

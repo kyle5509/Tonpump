@@ -5,7 +5,6 @@ import { BiComment } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa6";
 import { BsChat, BsDot, BsHeart, BsHeartFill, BsMessenger, BsStar } from "react-icons/bs";
 export default function PostCard({ post }: any) {
-  console.log(post)
   const darkmode = useAppSelector(store => store.darkmode.value)
   return (
     <div className={`flex w-full gap-4 rounded-md duration-300 ${darkmode ? "text-white": "text-gray-700"}`}>

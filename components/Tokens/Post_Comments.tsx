@@ -49,10 +49,8 @@ export default function Post_Comments({ opened, post, track, setOpened }: Props)
         })
       })
       const result = await response.json()
-      console.log(result)
 
     } catch (error) {
-      console.log(error)
     } finally {
       setLoading(false)
     }
