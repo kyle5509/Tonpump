@@ -27,26 +27,22 @@ export function useJettonContract() {
     let content = buildOnchainMetadata(jettonParams);
     const jettonContractFactory = useAsyncInitialize(async () => {
         if (!client) return;
-        const contract: any = TonkPumpFactory.fromAddress(Address.parse(process.env.NEXT_PUBLIC_TOKEN_FACTORY_ADDRESS as string ));
-        return client.open(contract) as OpenedContract<any>;
-    }, [client]);
+        const contract = TonkPumpFactory.fromAddress(Address.parse(process.env.NEXT_PUBLIC_TOKEN_FACTORY_ADDRESS as string))
+        return client.open(contract) as OpenedContract<TonkPumpFactory>
+    }, [client])
     return {
-        deploy: async () => {
+        deploy: () => {
             const message: DeployContractAndAMM = {
                 $$type: "DeployContractAndAMM",
                 content,
                 ticker: "USDC/TON",
                 v: bigIntValue
             }
-            try {
-                const result = await jettonContractFactory?.send(sender, {
-                    value: toNano("0.05"),
-                }, message);
-                return result; // Return the result for logging
-            } catch (error) {
-                console.error("Deployment failed:", error);
-                throw error;
-            }
+            jettonContractFactory?.send(sender, {
+                value: toNano("0.05")
+            }, message)
         }
     }
 }
+
+// 52449938

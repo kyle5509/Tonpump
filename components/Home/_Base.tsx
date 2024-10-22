@@ -12,14 +12,7 @@ export default function Base() {
 
   const { deploy } = useJettonContract();
 
-  const handleDeploy = async () => {
-    try {
-        const result = await deploy(); // Wait for the deploy function to complete
-        console.log("Deployment successful! Token info:", result); // Log the token info
-    } catch (error) {
-        console.error("Deployment failed:", error);
-    }
-};
+  const handleDeploy =  () => deploy()
 
   return (
     <motion.div
