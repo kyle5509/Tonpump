@@ -26,21 +26,15 @@ export default function DisplayPostCards() {
 
     return (
         <div className="">
-            {!loading ?
-                <motion.div className="">
-                    {posts?.length > 0 && (
-                        <div className={`grid duration-500 gap-8 grid-cols-1 sm:grid-cols-2 4xl:grid-cols-3`}>
-                            {posts?.map((post, key) => (
-                                <Post post={post}/>
-                            ))}
-                        </div>
-                    )}
-                </motion.div>
-                :
-                <div className="text-prim text-2xl font-bold text-center h-80 w-full grid place-content-center">
-                    <span className='loader3'></span>
-                </div>
-            }
+            <motion.div className="">
+                {posts?.length > 0 && (
+                    <div className={`grid bg-[#1B1B1B] duration-500 gap-8 grid-cols-1 sm:grid-cols-1 4xl:grid-cols-2`}>
+                        {posts?.map((post, key) => (
+                            <PostCard post={post} />
+                        ))}
+                    </div>
+                )}
+            </motion.div>
         </div>
     );
 }

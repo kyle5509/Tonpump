@@ -25,12 +25,13 @@ export default function Base() {
       initial="initial"
       className=" h-full text-white overflow-y-auto "
     >
-      <div className="w-full place-content-center grid">
-        <h1 className="mb-2 text-lg font-bold text-white">Deploy Jetton Contract</h1>
-        <button className="bg-prim px-6 py-3 rounded-md shadow-md duration-300 active:scale-95" onClick={handleDeploy}>Deploy</button>
-      </div>
-      <Upload />
       <Main />
     </motion.div>
   );
 }
+
+
+// <div className="w-full place-content-center grid">
+//         <h1 className="mb-2 text-lg font-bold text-white">Deploy Jetton Contract</h1>
+//         <button className="bg-prim px-6 py-3 rounded-md shadow-md duration-300 active:scale-95" onClick={handleDeploy}>Deploy</button>
+//       </div>
