@@ -13,7 +13,7 @@ export default function Main() {
       <MobileKingOfCoin />
       <div className="xl:hidden h-8"></div>
       <div className="p-3 xl:p-0">
-        <div className="flex gap-5">
+        <div className="flex p-2 gap-5">
           <div className="mt-1 ml-1">
             <Title title="Token" height="50px" parentStyle="" />
           </div>

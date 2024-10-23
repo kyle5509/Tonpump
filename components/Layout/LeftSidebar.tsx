@@ -31,7 +31,7 @@ export default function LeftSidebar() {
           <Link href={`${el[2]}`} onClick={() => dispatch(startRedirect())} key={key}
             className={`flex cursor-pointer active:scale-[0.96] group duration-500 items-center border-2 gap-4 px-8 py-3.5 text-sm rounded-full ${pathname === el[2]
               ? `font-semibold ${darkmode ? "text-secondary border-prim  bg-prim": "bg-secondary text-prim border-secondary "}`
-              : `${darkmode ? "text-white border-transparent  hover:border-prim": "text-black border-transparent hover:border-secondary hover:text-secondary"}`
+              : `${darkmode ? "text-white border-transparent bg-[#242727] hover:border-prim": "text-black bg-[#242727] border-transparent hover:border-secondary hover:text-secondary"}`
               }`}
           >
             <p className="transform-none">

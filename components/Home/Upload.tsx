@@ -2,7 +2,7 @@ import { BsStar } from "react-icons/bs";
 
 export default function Upload() {
     return (
-        <div className="flex p-4 border-[#8996A9] rounded-lg border gap-5">
+        <div className="flex p-4 border-[#8996A9] rounded-xl border gap-5">
             <div className="h-14 w-14 border-2 rounded-full shrink-0"></div>
             <div className="flex-1">
                 <div className="w-full h-12">
