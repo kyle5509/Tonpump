@@ -9,42 +9,42 @@ type TInitialState = {
 const initialState: TInitialState[] = [
   {
     type: "create",
-    user: "UGnxf",
+    user: "UrGnxf",
     amount: 0.02,
   },
   {
     type: "sell",
-    user: "DEred",
+    user: "DEreghd",
     amount: 0.15,
   },
   {
     type: "buy",
-    user: "SWqqw",
+    user: "SWtyqqw",
     amount: 1.15,
   },
   {
     type: "create",
-    user: "ORtew",
+    user: "dORtew",
     amount: 0.02,
   },
   {
     type: "sell",
-    user: "BHjue",
+    user: "BHjiue",
     amount: 2.05,
   },
   {
     type: "buy",
-    user: "HZsdt",
+    user: "HZytsdt",
     amount: 0.45,
   },
   {
     type: "buy",
-    user: "SWqqw",
+    user: "SWqqwp",
     amount: 1.15,
   },
   {
     type: "create",
-    user: "ORtew",
+    user: "ORtiew",
     amount: 0.02,
   },
   {
@@ -54,7 +54,7 @@ const initialState: TInitialState[] = [
   },
   {
     type: "buy",
-    user: "HZsdt",
+    user: "HZsdoot",
     amount: 0.45,
   },
 ];

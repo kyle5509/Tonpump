@@ -19,8 +19,9 @@ export default function DisplayActionCards() {
   // Mock transaction for testing
   const transaction = {
     type: "buy",
-    user: "HZsdt",
+    user: "HZsdrt",
     amount: 0.45,
+    
   }
 
   // Function to add a new transaction to the local state
@@ -38,18 +39,17 @@ export default function DisplayActionCards() {
       updateCards(); // Add a new transaction every 2 seconds
     }, 2000);
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [data]); // Re-sync if data from Redux changes
+  }, [data]); 
 
   return (
     <div className='flex flex-col gap-2'>
       <AnimatePresence>
         {transactions?.map((el, index) => (
           <motion.div
-            key={index} // Use index for key, but using unique IDs (like transaction ID) is better
+            key={el.user} // Use index for key, but using unique IDs (like transaction ID) is better
             initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: .5 }}
+            animate={{ opacity: 1, x: 0, transition: {duration: 2} }}
+            exit={{ opacity: 0, x: -100, transition:{duration: 2} }}
           >
             <ActionCard title={el.type} user={el.user} amount={el.amount} />
           </motion.div>
