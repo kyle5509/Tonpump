@@ -27,7 +27,7 @@ export default function BottomNav() {
         ["Profile", "profile.png", "/profile", <FaUserAlt size={16} />],
     ];
     return (
-        <div className={`flex h-[70px]  border-t items-center drop-shadow-md border-purplee xl:hidden justify-between py-2 px-4`}>
+        <div className={`flex h-[70px]  border-t items-center drop-shadow-md border-purplee lg:hidden justify-between py-2 px-4`}>
             {links.map((link, key) => (
                 <Link href={`${link[2]}`}  onClick={() => dispatch(startRedirect())}  className="" key={key}>
                     <div  className={`flex duration-500 flex-col gap-2 items-center justify-center ${pathname === link[2] ? `${darkmode ? 'text-prim ': "text-purplee "}` : `${darkmode ? 'text-gray-100' : ''}`}`}>

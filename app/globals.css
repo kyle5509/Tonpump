@@ -179,3 +179,11 @@ input[type="range"]::-moz-range-thumb:hover {
       transform: rotate(360deg);
   }
   } 
+
+
+   /* const dispatch = useAppDispatch()
+   const { deploy } = useJettonContract();
+   const handleDeploy = () => {
+     deploy()
+     console.log(process.env.NEXT_PUBLIC_TOKEN_FACTORY_ADDRESS)
+   } */

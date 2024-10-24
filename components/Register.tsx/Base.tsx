@@ -80,7 +80,7 @@ export default function Register() {
                     </div>
                     <p className="text-xl text-center font-semibold mb-0.5">Join the Chain – Sign Up</p>
                     <p className="text-13 text-center mb-6">Step into the future of secure transactions</p>
-                    <div className="space-y-3 mb-5">
+                    <div className="space-y-7 mb-5">
                         <Input label="Firstname" value={data.firstname} error={errors.firstname} onChange={onChange} name="firstname" placeholder="Enter your firstname" background="" labelStyle="font-semibold mb-1 text-13" />
                         <Input label="Lastname" value={data.lastname} error={errors.lastname} onChange={onChange} name="lastname" placeholder="Enter your lastname" background="" labelStyle="font-semibold mb-1 text-13" />
                         <Input label="Username" value={data.username} error={errors.username} onChange={onChange} name="username" placeholder="Enter your username" background="" labelStyle="font-semibold mb-1 text-13" />

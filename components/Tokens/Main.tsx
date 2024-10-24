@@ -18,41 +18,42 @@ export default function Main() {
     const posts = useAppSelector(store => store.posts)
 
     return (
-        <div className=" overflow-y-auto h-full w-full">
-            <div className="flex flex-col h-full">
-                <div className="p-2 xl:p-3">
-                    <div className="mb-5"><Title title="Token" /></div>
-                    <SpaceMan />
-                    <div className="my-5"><Title title="Charts" /></div>
-                </div>
-                <div className="">
-                    <div className="bg-[#292F32] px-2 lg:px-3 pt-2 lg:pt-3 ">
-                        <Chart />
-                        <div className="">
-                            <Links data={['Details', 'Threads', 'Transactions', 'Holders']} textStyle="px-3 text-13 xl:text-sm xl:px-4 " setActive={setActive} active={active} />
-                        </div>
+        <div className="flex-1 py-2 w-full">
+            <div className="">
+                <div className="flex flex-col h-full">
+                    <div className="p-2 xl:p-3">
+                        <div className="mb-5"><Title title="Token" /></div>
+                        <SpaceMan />
+                        <div className="my-5"><Title title="Charts" /></div>
                     </div>
-                    <div className={` overflow-y-auto ${active === 0 ? 'block' : "hidden"}`}>
-                        <Details />
-                    </div>
-                    <div className={` overflow-y-auto min-h-96 origin-top relative ${active === 1 ? 'block' : "hidden"}`}>
-                        {posts.length > 0 &&
+                    <div className="">
+                        <div className="bg-[#292F32] px-2 lg:px-3 pt-2 lg:pt-3 ">
+                            <Chart />
                             <div className="">
-                                {posts.map((post: any, key: number) => (
-                                    <Post_Comments post={post} track={key} setOpened={setOpened} opened={opened} />
-                                ))}
+                                <Links data={['Details', 'Threads', 'Transactions', 'Holders']} textStyle="px-3 text-13 xl:text-sm xl:px-4 " setActive={setActive} active={active} />
                             </div>
-                        }
-                    </div>
-                    <div className={` overflow-y-auto ${active === 2 ? 'block' : "hidden"}`}>
-                        <TransactionTable />
-                    </div>
-                    <div className={` overflow-y-auto ${active === 3 ? 'block' : "hidden"}`}>
-                        <HoldersTable />
+                        </div>
+                        <div className={` overflow-y-auto ${active === 0 ? 'block' : "hidden"}`}>
+                            <Details />
+                        </div>
+                        <div className={` overflow-y-auto min-h-96 origin-top relative ${active === 1 ? 'block' : "hidden"}`}>
+                            {posts.length > 0 &&
+                                <div className="">
+                                    {posts.map((post: any, key: number) => (
+                                        <Post_Comments post={post} track={key} setOpened={setOpened} opened={opened} />
+                                    ))}
+                                </div>
+                            }
+                        </div>
+                        <div className={` overflow-y-auto ${active === 2 ? 'block' : "hidden"}`}>
+                            <TransactionTable />
+                        </div>
+                        <div className={` overflow-y-auto ${active === 3 ? 'block' : "hidden"}`}>
+                            <HoldersTable />
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

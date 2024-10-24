@@ -1,6 +1,6 @@
 import Market from "../General/Market";
 import Title from "../General/Title";
-import RightSidebarA from "../Layout/RightSidebarA";
+import RightSidebarA from "../General/Updates";
 import FollowCard from "./FollowCard";
 
 export default function Main() {

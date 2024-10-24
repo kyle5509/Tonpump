@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from "react"
+
 type Props = {
     label?: string
     placeholder?: string
@@ -14,12 +18,12 @@ type Props = {
 }
 
 export default function Input({ label,labelStyle,error, name, onChange, value, placeholder,height, background, text, marginBottom, marginTop }: Props) {
+    const [focused, setFocused] = useState(false)
     return (
         <div style={{ marginBottom: `${marginBottom}`, marginTop: `${marginTop}` }} className="w-full">
-            <p className={`${labelStyle}`}>{label}</p>
-            <div style={{ height: `${height}`, backgroundColor: `${background}` }} className={`h-12 w-full overflow-hidden rounded-md duration-500 border-2 relative shadow-md ${error ? "border-red-500": `${value.trim().length > 0 ? "border-prim" : "border-gray-300"}`}`}>
-                <input type="text" name={name} value={value} onChange={onChange} placeholder={placeholder} className="h-full text-black placeholder:text-[#9EA3A9] bg-transparent pl-3 outline-none w-full" />
-                <p className="text-[#bdc2c7] absolute text-13 pointer-events-none top-1/2 -translate-y-1/2 right-3">{text}</p>
+            <div style={{ height: `${height}`, backgroundColor: `${background}` }} className={`h-[50px] w-full rounded duration-500  relative  $`}>
+                <input required type="text" name={name} value={value} onChange={onChange} className={`h-full text-black placeholder:text-[#9EA3A9] border-2 ${error ? "border-red-500": `${value.trim().length > 0 ? "border-prim" : "border-gray-300"}`} bg-transparent rounded focus:border-prim peer pl-3 outline-none w-full`} />
+                <label htmlFor="" className="absolute bg-white peer-focus:text-prim peer-valid:text-prim peer-valid:-top-0 peer-focus:-top-0 pointer-events-none duration-300 px-1.5 peer-focus:text-xs peer-valid:text-xs top-1/2 -translate-y-1/2 left-2">{label}</label>
             </div>
             <p className={`text-red-500 ${error ? "h-5": "h-0"} overflow-hidden duration-500`}>{error}</p>
         </div>

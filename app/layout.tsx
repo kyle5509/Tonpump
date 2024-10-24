@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import AppProvider from "@/redux/provider/AppProvider";
-import Top from "@/components/Layout/Top";
+import Top from "@/components/Nav/Top";
 import { TonProvider } from "@/tonprovider/TonProvider";
 import Main from "../components/Layout/Main";
 

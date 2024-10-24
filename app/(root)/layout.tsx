@@ -1,7 +1,7 @@
 'use client'
-import BottomNav from "@/components/Layout/BottomNav"
+import BottomNav from "@/components/Nav/BottomNav"
 import Body from "@/components/Layout/Body"
-import Top from "@/components/Layout/Top"
+import Top from "@/components/Nav/Top"
 import { useAppSelector } from "@/redux/store/hook"
 import { motion } from "framer-motion"
 import { variant } from "@/lib/framer"
@@ -10,11 +10,7 @@ type Props = {
     children: React.ReactNode
 }
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     const darkmode = useAppSelector(store => store.darkmode.value)
     return (
         <div className={`h-screen overflow-y-auto relative duration-500 ${darkmode ? "bg-mainDark" : "bg-gray-100"}`}>

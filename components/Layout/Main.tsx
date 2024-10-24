@@ -1,8 +1,8 @@
 'use client'
 
-import BottomNav from "@/components/Layout/BottomNav"
+import BottomNav from "@/components/Nav/BottomNav"
 import Body from "@/components/Layout/Body"
-import Top from "@/components/Layout/Top"
+import Top from "@/components/Nav/Top"
 import { useAppSelector } from "@/redux/store/hook"
 import { motion } from "framer-motion"
 import { variant } from "@/lib/framer"
