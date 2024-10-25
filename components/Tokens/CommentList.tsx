@@ -28,7 +28,7 @@ export default function CommentList({ id, comments}: Props) {
 
 
   return (
-    <div className="relative duration-500 overflow-hidden">
+    <div className="relative border rounded-2xl duration-500 overflow-hidden">
         <div className="flex flex-col gap-1">
           {[1,2,3,4,5].map((el: any, key: number) => (
             <div key={key} className="">

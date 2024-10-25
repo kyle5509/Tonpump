@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
+  value: '',
 };
 
 export const BackdropSlice = createSlice({
@@ -12,7 +12,7 @@ export const BackdropSlice = createSlice({
       state.value = action.payload;
     },
     closeBackdrop: (state) => {
-        state.value = 0
+        state.value = ''
     }
   },
 });

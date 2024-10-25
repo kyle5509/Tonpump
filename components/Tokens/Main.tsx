@@ -2,57 +2,34 @@
 import { useEffect, useState } from "react";
 import Links from "../General/Links";
 import Title from "../General/Title";
-import Chart from "./Chart";
-import SpaceMan from "./SpaceMan";
-import Post_Comments from "./Post_Comments";
-import Details from "./Details";
-import TransactionTable from "../Tables/TransactionTable";
-import HoldersTable from "../Tables/HoldersTable";
-import { useAppSelector } from "@/redux/store/hook";
-import { RootState } from "@/redux/store/store";
-// import { useJettonContract } from "@/hooks/useJettonContract";
+import TrendingCardList from "./TrendingCardList";
+import Updates from "../General/Updates";
 
 export default function Main() {
     const [active, setActive] = useState(0);
-    const [opened, setOpened] = useState(-1)
-    const posts = useAppSelector(store => store.posts)
 
     return (
-        <div className="flex-1 py-2 w-full">
-            <div className="">
-                <div className="flex flex-col h-full">
-                    <div className="p-2 xl:p-3">
-                        <div className="mb-5"><Title title="Token" /></div>
-                        <SpaceMan />
-                        <div className="my-5"><Title title="Charts" /></div>
-                    </div>
-                    <div className="">
-                        <div className="bg-[#292F32] px-2 lg:px-3 pt-2 lg:pt-3 ">
-                            <Chart />
-                            <div className="">
-                                <Links data={['Details', 'Threads', 'Transactions', 'Holders']} textStyle="px-3 text-13 xl:text-sm xl:px-4 " setActive={setActive} active={active} />
-                            </div>
+        <div className="sm:p-3 xl:p-0 xl:h-full pl-0 xl:overflow-y-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-[1fr_350px] lg:border-2 xl:border-none border-purplee rounded-2xl xl:h-full xl:overflow-y-auto ">
+                <div className="xl:h-full xl:overflow-y-auto mb-4 order-2 xl:order-1">
+                    <div className="flex-1 my-3 xl:border-2 border-purplee rounded-2xl">
+                        <div className="flex items-center m-3 justify-between md:justify-start md:w-fit gap-12">
+                            <Title
+                                title="Tokens"
+                                parentStyle="h-[50px]"
+                            />
+                            <Links
+                                active={active}
+                                height="50px"
+                                setActive={setActive}
+                                textStyle="text-xs md:text-13 px-3 md:px-5"
+                                data={["Trending", "Following", "New Projects"]}
+                            />
                         </div>
-                        <div className={` overflow-y-auto ${active === 0 ? 'block' : "hidden"}`}>
-                            <Details />
-                        </div>
-                        <div className={` overflow-y-auto min-h-96 origin-top relative ${active === 1 ? 'block' : "hidden"}`}>
-                            {posts.length > 0 &&
-                                <div className="">
-                                    {posts.map((post: any, key: number) => (
-                                        <Post_Comments post={post} track={key} setOpened={setOpened} opened={opened} />
-                                    ))}
-                                </div>
-                            }
-                        </div>
-                        <div className={` overflow-y-auto ${active === 2 ? 'block' : "hidden"}`}>
-                            <TransactionTable />
-                        </div>
-                        <div className={` overflow-y-auto ${active === 3 ? 'block' : "hidden"}`}>
-                            <HoldersTable />
-                        </div>
+                        <TrendingCardList />
                     </div>
                 </div>
+                <Updates />
             </div>
         </div>
     )

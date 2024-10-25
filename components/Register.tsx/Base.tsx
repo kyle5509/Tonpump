@@ -12,7 +12,6 @@ export default function Register() {
     const [errors, setErrors] = useState(error)
     const [backendError, setBackendError] = useState('')
     const [loading, setLoading] = useState(false)
-    const [redirecting, setRedirecting] = useState(false)
     const router = useRouter()
 
     const onChange = (e: any) => {
@@ -60,7 +59,6 @@ export default function Register() {
                     return setBackendError(result.error)
                 }
             }
-            setRedirecting(true)
             router.push('/')
         } catch (error: any) {
             setBackendError(error?.message)
@@ -73,7 +71,6 @@ export default function Register() {
 
     return (
         <div className="h-screen w-full place-content-center">
-            {!redirecting ?
                 <div className="w-[425px] mx-auto">
                     <div className="grid mb-4 mt-4 place-content-center">
                         <img src="logo.png" className="h-10" alt="" />
@@ -93,11 +90,7 @@ export default function Register() {
                     <p className={`text-red-500 ${backendError ? "h-5" : "h-0"} overflow-hidden duration-500`}>{backendError}</p>
                     <p className="mt-8 text-center">Already have an account? <Link className="font-bold text-blue-500" href={'/login'}>Sign in</Link></p>
                 </div>
-                :
-                <div className="bg-mainDark h-screen w-full grid place-content-center">
-                    <span className="loader"></span>
-                </div>
-            }
+               
         </div>
     )
 }

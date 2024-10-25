@@ -7,51 +7,15 @@ import { FaRegGem } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/store/hook";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { startRedirect } from "@/redux/reducers/redirect";
+import Links from "./Links";
 
 export default function Sidebar() {
   const darkmode = useAppSelector((store) => store.darkmode.value);
-  const dispatch = useAppDispatch()
-  const pathname = usePathname();
-  const links = [
-    ["Home", "home.png", "/", <IoMdHome size={21} />],
-    [
-      "All Tokens",
-      "tokens.png",
-      "/tokens",
-      <BsFillGridFill style={{ rotate: "45deg" }} size={16} />,
-    ],
-    ["Profile", "profile.png", "/profile", <FaUserAlt size={17} />],
-    ["Earn", "gem1.png", "/earn", <FaRegGem size={17} />],
-  ];
+ 
   return (
     <div className="overflow-y-auto p-3 h-full hidden lg:flex">
       <div className={`border-2 border-purplee w-[310px] 2xl:w-[335px] rounded-xl  h-full duration-500 p-3 flex flex-col justify-between `}>
-        <div className="flex flex-col gap-2">
-          {links.map((el, key) => (
-            <Link href={`${el[2]}`} onClick={() => dispatch(startRedirect())} key={key}
-              className={`flex cursor-pointer active:scale-[0.96] group duration-500 items-center border-2 gap-4 px-8 py-3 text-sm rounded-xl ${pathname === el[2]
-                ? `font-semibold ${darkmode ? "text-secondary border-prim  bg-prim" : "bg-secondary text-prim border-secondary "}`
-                : `${darkmode ? "text-white border-transparent bg-[#242727] hover:border-prim" : "text-black bg-[#242727] border-transparent hover:border-secondary hover:text-secondary"}`
-                }`}
-            >
-              <p className="transform-none">
-                <span
-                  className={`${pathname != el[2] && `${darkmode ? "group-hover:text-prim" : "group-hover:text-secondary"}`} duration-500`}
-                >
-                  {el[3]}
-                </span>
-              </p>
-              <p className="transform-none">
-                <span
-                  className={`${pathname != el[2] && `${darkmode ? "group-hover:text-prim" : "group-hover:text-secondary"}`} duration-500 uppercase font-semibold text-13`}
-                >
-                  {el[0]}
-                </span>
-              </p>
-            </Link>
-          ))}
-        </div>
+        <Links />
         <div className="">
           <div className="grid mb-5 mt-3 place-content-center">
             <img src="cuate.png" className="" alt="" />

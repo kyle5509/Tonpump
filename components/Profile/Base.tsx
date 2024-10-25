@@ -4,15 +4,10 @@ import { useEffect, useLayoutEffect } from "react";
 import { variant } from "@/lib/framer";
 import { useAppDispatch } from "@/redux/store/hook";
 import Main from "./Main";
-import { stopRedirect } from "@/redux/reducers/redirect";
 
 
 export default function Base() {
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(stopRedirect())
-  }, [])
+  
 
 
   return (

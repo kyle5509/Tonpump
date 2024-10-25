@@ -6,10 +6,16 @@ import { FaRegComment } from "react-icons/fa6";
 import { BsChat, BsDot, BsHeart, BsHeartFill, BsMessenger, BsStar } from "react-icons/bs";
 import Tag from "./Tag";
 
-export default function PostCard({ post }: any) {
+type Props = {
+  length: number 
+  track: number 
+  posts: any
+}
+
+export default function PostCard({ posts, length, track }: Props) {
   const darkmode = useAppSelector(store => store.darkmode.value)
   return (
-    <div className="flex gap-3 border rounded-2xl text-white border-[#8996A9] p-3">
+    <div className={` gap-3 md:border ${track > 2 ? "hidden md:flex": 'flex'} ${track+1 !== length && "border-b"}  lg:rounded-2xl text-white border-[#8996A9] p-2 md:p-3`}>
       <div className="h-11 w-11 shrink-0 rounded-full border-2"></div>
       <div className="flex-1">
         <div className="w-full mb-1 items-center flex justify-between">
@@ -26,7 +32,7 @@ export default function PostCard({ post }: any) {
         </div>
         <div className="flex mt-3 gap-3">
           <p><FaRegComment className="inline mr-1 align-middle " /> 67</p>
-          <p><BsHeartFill className="inline text-rose-500 mr-1 align-middle " /> 67</p>
+          <p className="text-[#F4245E]"><BsHeartFill className="inline mr-1 align-middle " /> 7.5k</p>
         </div>
         <p className="mt-2">Show more</p>
       </div>

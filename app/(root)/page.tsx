@@ -2,17 +2,15 @@ import Main from "@/components/Home/Main";
 import Framer from "@/components/Layout/Framer";
 import Updates from "@/components/General/Updates";
 import Cards from "@/components/Home/New";
+import PostBackdrop from "@/components/Home/PostBackdrop";
 
-export default function Base() {
- 
+export default async function Base() {
+  const response = await fetch('https://backend-server-tvb6.onrender.com/api/posts');
+  const result = await response.json()
+  const posts = result.data
   return (
     <Framer>
-      <div
-        className="w-full grid h-full overflow-y-auto xl:grid-cols-[1fr_auto]"
-      >
-        <Updates />
-        <Main />
-      </div>
+      <Main posts={posts}/>
     </Framer>
   );
 }

@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        'xs': '500px',
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
         '2xl': '1360px',
-        '3xl': '1420px',
+        '3xl': '1450px',
         '4xl': '1680px',
         '5xl': '2000px',
         '6xl': '2200px',

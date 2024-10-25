@@ -12,9 +12,9 @@ export default function Updates() {
   const [active, setActive] = useState(0);
   const [activeMarket, setActiveMarket] = useState(0);
   return (
-    <div className="lg:p-3 pl-0 xl:pl-3 h-full xl:overflow-y-auto xl:order-2">
-      <div className="h-full xl:overflow-y-auto">
-        <div className='flex flex-col lg:border-2 xl:w-[350px] min-h-full rounded-2xl border-purplee'>
+    <div className="xl:p-3 pl-0 xl:pl-3 order-1 xl:order-2 w-full h-fit xl:h-full xl:overflow-y-auto overflow-x-hidden">
+      <div className="h-fit xl:h-full xl:overflow-y-auto">
+        <div className='flex flex-col xl:border-2 w-full overflow-x-hidden min-h-full xl:rounded-2xl border-purplee'>
           <div className="px-3 py-2 mb-3">
             <Title
               title="King of Coin"

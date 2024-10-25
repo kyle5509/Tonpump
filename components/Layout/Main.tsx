@@ -22,7 +22,7 @@ export default function Main({ children }: Props) {
   
     return (
         <motion.div variants={variant} animate="animate" initial="initial" className={`h-screen overflow-y-auto relative duration-500 ${darkmode ? "bg-mainDark" : "bg-gray-100"}`}>
-            <div className="transition-none z-30 relative h-screen flex flex-col overflow-y-auto">
+            <div className="transition-none z-30 bg-emerald-500 relative h-screen flex flex-col overflow-y-auto">
                 <Top />
                 <Body children={children} />
                 <BottomNav />

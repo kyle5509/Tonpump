@@ -5,6 +5,7 @@ import Top from "@/components/Nav/Top"
 import { useAppSelector } from "@/redux/store/hook"
 import { motion } from "framer-motion"
 import { variant } from "@/lib/framer"
+import Backdrop from "@/components/General/Backdrop"
 
 type Props = {
     children: React.ReactNode
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="transition-none z-30 relative h-screen flex flex-col overflow-y-auto">
                 <Top />
                 <Body children={children} />
+                <Backdrop />
                 <BottomNav />
             </div>
         </div>

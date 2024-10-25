@@ -47,7 +47,7 @@ export default function DisplayActionCards() {
         {transactions?.map((el, index) => (
           <motion.div
             key={el.user} // Use index for key, but using unique IDs (like transaction ID) is better
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0, transition: {duration: 2} }}
             exit={{ opacity: 0, x: -100, transition:{duration: 2} }}
           >
