@@ -1,9 +1,9 @@
-import Register from '@/components/Register.tsx/Base'
+import Base from "@/components/Register/Base";
 
 export default function page() {
   return (
     <div>
-        <Register />
+        <Base />
     </div>
   )
 }

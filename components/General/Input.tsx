@@ -17,15 +17,12 @@ type Props = {
     name?: string
 }
 
-export default function Input({ label,labelStyle,error, name, onChange, value, placeholder,height, background, text, marginBottom, marginTop }: Props) {
+export default function Input({ label, labelStyle, error, name, onChange, value, placeholder, height, background, text, marginBottom, marginTop }: Props) {
     const [focused, setFocused] = useState(false)
     return (
-        <div style={{ marginBottom: `${marginBottom}`, marginTop: `${marginTop}` }} className="w-full">
-            <div style={{ height: `${height}`, backgroundColor: `${background}` }} className={`h-[50px] w-full rounded duration-500  relative  $`}>
-                <input required type="text" name={name} value={value} onChange={onChange} className={`h-full text-black placeholder:text-[#9EA3A9] border-2 ${error ? "border-red-500": `${value.trim().length > 0 ? "border-prim" : "border-gray-300"}`} bg-transparent rounded focus:border-prim peer pl-3 outline-none w-full`} />
-                <label htmlFor="" className="absolute bg-white peer-focus:text-prim peer-valid:text-prim peer-valid:-top-0 peer-focus:-top-0 pointer-events-none duration-300 px-1.5 peer-focus:text-xs peer-valid:text-xs top-1/2 -translate-y-1/2 left-2">{label}</label>
-            </div>
-            <p className={`text-red-500 ${error ? "h-5": "h-0"} overflow-hidden duration-500`}>{error}</p>
+        <div className="h-[60px] shadow-lg rounded-md relative">
+            <input type="text" required className="h-full text-15 border border-gray-400 valid:border-2 rounded valid:pt-5 focus-within:border-prim w-full bg-transparent focus:pt-5 duration-300 pl-3 valid text-white peer outline-none" />
+            <label htmlFor="" className="absolute text-15 top-5 text-gray-400 left-3 duration-500 pointer-events-none peer-focus:top-2 peer-focus:text-13 peer-valid:top-2 peer-valid:text-13 peer-focus:text-prim peer-valid:text-gray-400 ">{label}</label>
         </div>
     )
 }
