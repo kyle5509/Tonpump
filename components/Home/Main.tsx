@@ -40,7 +40,7 @@ export default function Main({ posts }: Props) {
             </div>
             <Upload />
           </div>
-          <div className="lg:p-3">
+          <div className="bg-black lg:p-3">
             <DisplayPostCards />
           </div>
         </div>

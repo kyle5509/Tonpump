@@ -14,7 +14,7 @@ export default function Sidebar() {
  
   return (
     <div className="overflow-y-auto p-3 h-full hidden lg:flex">
-      <div className={`border-2 border-purplee w-[275px] 2xl:w-[335px] rounded-xl  h-full duration-500 p-3 flex flex-col justify-between `}>
+      <div className={`border-2 border-purplee w-[275px] 2xl:w-[300px] 4xl:w-[320px] rounded-xl  h-full duration-500 p-3 flex flex-col justify-between `}>
         <Links />
         <div className="">
           <div className="grid mb-5 mt-3 place-content-center">
