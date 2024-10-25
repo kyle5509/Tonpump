@@ -15,7 +15,7 @@ type Props = {
 export default function PostCard({ posts, length, track }: Props) {
   const darkmode = useAppSelector(store => store.darkmode.value)
   return (
-    <div className={` gap-3 md:border ${track > 2 ? "hidden md:flex": 'flex'} ${track+1 !== length && "border-b"}  lg:rounded-2xl text-white border-[#8996A9] p-2 md:p-3`}>
+    <div className={` gap-3 md:border flex ${track+1 !== length && "border-b"}  lg:rounded-2xl text-white border-[#8996A9] p-2 md:p-3`}>
       <div className="h-11 w-11 shrink-0 rounded-full border-2"></div>
       <div className="flex-1">
         <div className="w-full mb-1 items-center flex justify-between">

@@ -15,19 +15,21 @@ type Transaction = {
 export default function DisplayActionCards() {
   const data = useAppSelector(store => store.sidebarActions) // Fetch transactions from Redux
   const [transactions, setTransactions] = useState<Transaction[]>([])
+  const [id, setId] = useState(10)
 
   // Mock transaction for testing
-  const transaction = {
+  const [transaction, setTransaction] = useState({
     type: "buy",
     user: "HZsdrt",
     amount: 0.45,
-    
-  }
+    id
+  })
 
   // Function to add a new transaction to the local state
   const updateCards = async () => {
     setTransactions((prevCards) => {
-      const updatedCards = [transaction, ...prevCards]; // Add new card at the beginning
+      setId(id + 1)
+      const updatedCards = [{...transaction, id: id + 1}, ...prevCards]; // Add new card at the beginning
       return updatedCards.slice(0, 10); // Ensure only the latest 10 cards are kept
     });
   };
@@ -51,7 +53,7 @@ export default function DisplayActionCards() {
             animate={{ opacity: 1, x: 0, transition: {duration: 2} }}
             exit={{ opacity: 0, x: -100, transition:{duration: 2} }}
           >
-            <ActionCard title={el.type} user={el.user} amount={el.amount} />
+            <ActionCard title={el.type} track={index} user={el.user} amount={el.amount} />
           </motion.div>
         ))}
       </AnimatePresence>
