@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from '@/redux/store/hook'
 import { addTransaction } from '@/redux/reducers/sidebarActions'
 import { useEffect, useState } from 'react'
 
-// Define Transaction type outside of component
 type Transaction = {
   type: string;
   user: string;
@@ -13,11 +12,10 @@ type Transaction = {
 };
 
 export default function DisplayActionCards() {
-  const data = useAppSelector(store => store.sidebarActions) // Fetch transactions from Redux
+  const data = useAppSelector(store => store.sidebarActions) 
   const [transactions, setTransactions] = useState<Transaction[]>([])
   const [id, setId] = useState(10)
 
-  // Mock transaction for testing
   const [transaction, setTransaction] = useState({
     type: "buy",
     user: "HZsdrt",
@@ -25,22 +23,20 @@ export default function DisplayActionCards() {
     id
   })
 
-  // Function to add a new transaction to the local state
   const updateCards = async () => {
     setTransactions((prevCards) => {
       setId(id + 1)
-      const updatedCards = [{...transaction, id: id + 1}, ...prevCards]; // Add new card at the beginning
-      return updatedCards.slice(0, 10); // Ensure only the latest 10 cards are kept
+      const updatedCards = [{...transaction, id: id + 1}, ...prevCards]; 
+      return updatedCards.slice(0, 10); 
     });
   };
 
-  // Synchronize local state with Redux state (data) and update every 2 seconds
   useEffect(() => {
-    setTransactions(data); // Initial load from Redux
+    setTransactions(data);  
     const interval = setInterval(() => {
-      updateCards(); // Add a new transaction every 2 seconds
+      updateCards();  
     }, 2000);
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);  
   }, [data]); 
 
   return (
@@ -48,7 +44,7 @@ export default function DisplayActionCards() {
       <AnimatePresence>
         {transactions?.map((el, index) => (
           <motion.div
-            key={el.user} // Use index for key, but using unique IDs (like transaction ID) is better
+            key={el.user} 
             initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0, transition: {duration: 2} }}
             exit={{ opacity: 0, x: -100, transition:{duration: 2} }}

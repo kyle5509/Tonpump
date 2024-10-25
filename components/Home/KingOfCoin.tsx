@@ -32,7 +32,7 @@ export default function KingOfCoin() {
           </div>
         </div>
       </div>
-      <img src="king.png" className=" object-contain" alt="" />
+      <img src="king.png" className=" object-contain h-28" alt="" />
     </div>
   );
 }
