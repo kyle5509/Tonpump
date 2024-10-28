@@ -21,7 +21,7 @@ const config: Config = {
         '6xl': '2200px',
       },
       colors: {
-        mainDark: "#210716",
+        mainDark: "#14050E",
         mainLight: "white",
         secondary: "#22577A",
         prim: "#9DFBFA",

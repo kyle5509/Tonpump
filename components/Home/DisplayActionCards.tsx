@@ -9,6 +9,7 @@ type Transaction = {
   type: string;
   user: string;
   amount: number;
+  id: number
 };
 
 export default function DisplayActionCards() {
@@ -44,7 +45,7 @@ export default function DisplayActionCards() {
       <AnimatePresence>
         {transactions?.map((el, index) => (
           <motion.div
-            key={el.user} 
+            key={el.id} 
             initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0, transition: {duration: 2} }}
             exit={{ opacity: 0, x: -100, transition:{duration: 2} }}

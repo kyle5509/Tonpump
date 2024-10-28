@@ -4,9 +4,20 @@ export const register = {
     username: '',
     wallet_address: '',
 }
-export const error = {
+
+
+type TError = {
+    firstname: string
+    lastname: string
+    username: string
+    wallet_address: string
+    backend?: string
+}
+
+export const error: TError = {
     firstname: '',
     lastname: '',
     username: '',
     wallet_address: '',
+    backend: ''
 }

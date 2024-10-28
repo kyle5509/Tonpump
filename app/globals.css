@@ -52,7 +52,6 @@ body {
   }
 }
 
-
 input[type="range"] {
   -webkit-appearance: none; /* For Chrome */
   appearance: none;
@@ -115,14 +114,7 @@ input[type="range"]::-moz-range-thumb:hover {
   border-color: rgb(157 251 250);
 }
 
-.loader2 {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: relative;
-  animation: rotate 1s linear infinite;
-}
-.loader2::before,
+
 .loader::after {
   content: "";
   box-sizing: border-box;
@@ -132,10 +124,7 @@ input[type="range"]::-moz-range-thumb:hover {
   border: 3px solid black;
   animation: prixClipFix 2s linear infinite;
 }
-.loader2::after {
-  transform: rotate3d(90, 90, 0, 180deg);
-  border-color: rgb(157 251 250);
-}
+
 
 @keyframes rotate {
   0% {
@@ -159,29 +148,47 @@ input[type="range"]::-moz-range-thumb:hover {
   }
 }
 
-
 .loader3 {
   width: 48px;
   height: 48px;
-  border: 5px solid #FFF;
+  border: 5px solid #fff;
   border-bottom-color: rgb(157 251 250);
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  }
+}
 
-  @keyframes rotation {
+@keyframes rotation {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  } 
+}
 
+.loader2 {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #000000;
+  border-bottom-color: rgb(157 251 250);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
 
-   /* const dispatch = useAppDispatch()
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* const dispatch = useAppDispatch()
    const { deploy } = useJettonContract();
    const handleDeploy = () => {
      deploy()

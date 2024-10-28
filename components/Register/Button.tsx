@@ -1,5 +1,13 @@
 
-export default function Button() {
+type Props = {
+    loading?: boolean
+    valid: boolean
+}
+
+export default function Button({ loading, valid }: Props) {
     return (
-        <p className="w-full cursor-pointer duration-300 hover:scale-105 active:scale-100 py-4 mt-12 bg-white font-semibold text-black rounded-full text-base grid place-content-center">Next</p>)
+        <button disabled={!valid} className={`w-full duration-300 h-14 mt-12  font-semibold text-black rounded-full text-base grid place-content-center ${valid ? "bg-white cursor-pointer  hover:scale-105 active:scale-100" : "bg-gray-500 cursor-auto"}`}>
+            {loading ? <span className="loader2"></span>
+                : <span>Next</span>}
+        </button>)
 }

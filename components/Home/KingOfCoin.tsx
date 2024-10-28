@@ -15,24 +15,24 @@ export default function KingOfCoin() {
           <strong className="inline-block">Space Man (#Space)</strong>
         </div>
         <div className="flex mt-2 gap-2">
-          <img src="image.png" className="h-auto sm:h-20 lg:h-auto rounded-xl" alt="" />
+          <img src="/image.png" className="h-auto sm:h-20 lg:h-auto rounded-xl" alt="" />
           <div className="flex text-xs font-semibold flex-col justify-between p-[6px] bg-black/20 rounded-xl">
             <div className="flex items-center gap-[6px]">
               <div className="shrink-0">
-                <img src="comment.png" className="w-4" alt="" />
+                <img src="/comment.png" className="w-4" alt="" />
               </div>
               <p>61</p>
             </div>
             <div className="flex items-center gap-[6px]">
               <div className="shrink-0">
-                <img src="like.png" className="w-4" alt="" />
+                <img src="/like.png" className="w-4" alt="" />
               </div>
               <p className="text-[#F4245E]">6.2k</p>
             </div>
           </div>
         </div>
       </div>
-      <img src="king.png" className=" object-contain h-28" alt="" />
+      <img src="/king.png" className=" object-contain h-28" alt="" />
     </div>
   );
 }

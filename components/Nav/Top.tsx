@@ -26,7 +26,7 @@ export default function Top() {
                     </span>
                 </div>
                 <Link href='/' onClick={() => setOpen(!isOpen)}>
-                    <img src="logo.png" className="w-36 lg:w-40" alt="" />
+                    <img src="tonLogo.svg" className="w-36 lg:w-40" alt="" />
                 </Link>
                 <Socials />
             </div>
@@ -40,7 +40,7 @@ export default function Top() {
                 <div className="flex-1 lg:flex-none lg:hidden">
                     <Search />
                 </div>
-                <div className="flex gap-2 lg:gap-4 lg:flex-none justify-end flex-[1.5]">
+                <div className="flex gap-2 lg:gap-6 lg:flex-none justify-end flex-[1.5]">
                     <Gem />
                     <TonButton />
                 </div>

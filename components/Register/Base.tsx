@@ -1,75 +1,13 @@
 'use client'
 
 import Link from "next/link"
-import Input from "../General/Input"
 import { useState } from "react"
-import { error, register } from "./data"
-import { useRouter } from "next/navigation"
 import Register from "./Auth"
 
 export default function Base() {
-
-    const [data, setData] = useState(register)
-    const [errors, setErrors] = useState(error)
-    const [backendError, setBackendError] = useState('')
-    const [loading, setLoading] = useState(false)
     const [opened, setOpened] = useState(0)
-    const router = useRouter()
 
-    const onChange = (e: any) => {
-        const { name, value } = e.target
-        setData({ ...data, [name]: value })
-        setErrors({ ...errors, [name]: "" })
-        setBackendError("")
-    }
-
-    const submit = async () => {
-        if (!data.firstname.trim() || !data.lastname.trim() || !data.username.trim() || !data.wallet_address.trim()) {
-            setErrors({
-                firstname: data.firstname.trim() ? "" : "Please input your Firstname",
-                lastname: data.lastname.trim() ? "" : "Please input your Lastname",
-                username: data.username.trim() ? "" : "Please input your Username ",
-                wallet_address: data.wallet_address.trim() ? "" : "Please input your Wallet address",
-            })
-            return
-        }
-        try {
-            setLoading(true)
-            const response = await fetch('https://backend-server-tvb6.onrender.com/api/users/create', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: data.firstname,
-                    surname: data.lastname,
-                    username: data.username,
-                    wallet_address: data.wallet_address,
-                    photo: 'new'
-                }),
-            });
-
-            const result = await response.json();
-            if (!response.ok) {
-                if (result.error == "username already exist") {
-                    return setErrors({ ...errors, username: "Username already exists" })
-                }
-                else if (result.error == "wallet address already belongs to a user") {
-                    return setErrors({ ...errors, wallet_address: "Wallet address already belongs to a user" })
-                }
-                else {
-                    return setBackendError(result.error)
-                }
-            }
-            router.push('/')
-        } catch (error: any) {
-            setBackendError(error?.message)
-        }
-        finally {
-            setLoading(false)
-        }
-
-    }
+   
 
     return (
         <div className="h-screen px-5 z-20 relative bg-black grid grid-cols-1 lg:grid-cols-2">
